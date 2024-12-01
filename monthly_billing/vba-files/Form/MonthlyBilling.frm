@@ -15,7 +15,19 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 
+Private Sub CommandButton1_Click()
+    CreateBillingServiceWorksheet(CreateUserWorksheet)
+    CreateSummaryWorksheet
+End Sub
+
+Private Sub createBilling_btn_Click()
+    CreateBillingServiceWorksheet
+End Sub
+
+Private Sub createServiceSummary_btn_Click()
+    CreateSummaryWorksheet
+End Sub
+
 Private Sub createUser_btn_Click()
     CreateUserWorksheet
 End Sub
-
