@@ -16,8 +16,7 @@ Attribute VB_Exposed = False
 
 
 Private Sub CommandButton1_Click()
-    CreateBillingServiceWorksheet(CreateUserWorksheet)
-    CreateSummaryWorksheet
+    CreateSummaryWorksheet(CreateBillingServiceWorksheet(CreateUserWorksheet))
 End Sub
 
 Private Sub createBilling_btn_Click()

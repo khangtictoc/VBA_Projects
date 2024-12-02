@@ -1,5 +1,5 @@
 Attribute VB_Name = "SummaryWorksheet"
-Function CreateSummaryWorksheet()
+Function CreateSummaryWorksheet(svWsName As String)
     Dim ws As Worksheet
     Dim lastRow As Long
     Dim i As Long
@@ -59,6 +59,10 @@ Function CreateSummaryWorksheet()
         havePaidCell.Value = ""
         mustPaidCell.Value = ""
         remainingCell.Value = ""
+
+        havePaidCell.Value = "=SUMIF('" & svWsName & "'!$D$2:$D$8, B" & i & ",'" &  svWsName & "'!$C$2:$C$8)"
+        mustPaidCell.Value = "=SUM('" & svWsName & "'!$C$2:$C$8) /2"
+        remainingCell.Value = "=C" & i & "-D" & i
     Next i
 
     ' Create border for the table

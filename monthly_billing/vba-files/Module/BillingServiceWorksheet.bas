@@ -1,5 +1,5 @@
 Attribute VB_Name = "BillingServiceWorksheet"
-Function CreateBillingServiceWorksheet(UserWorksheetName As String)
+Function CreateBillingServiceWorksheet(userWsName As String)
     Dim ws As Worksheet
     Dim lastRow As Long
     Dim i As Long
@@ -40,7 +40,7 @@ Function CreateBillingServiceWorksheet(UserWorksheetName As String)
     ws.Columns(1).ColumnWidth = 10
     ws.Columns(2).ColumnWidth = 20
     ws.Columns(3).ColumnWidth = 15
-    ws.Columns(4).ColumnWidth = 50
+    ws.Columns(4).ColumnWidth = 25
 
     ' Optional: Set the number format for the index column
     ws.Columns(1).NumberFormat = "0"
@@ -60,7 +60,7 @@ Function CreateBillingServiceWorksheet(UserWorksheetName As String)
         picCell.Value = ""
         
         ' Create Data Validation for choosing "Person In Charge"
-        Set refWs = ThisWorkbook.Sheets(UserWorksheetName)
+        Set refWs = ThisWorkbook.Sheets(userWsName)
         With ws.Range(picCell.Address).Validation 
             .Delete ' Remove any existing validation
             .Add Type:=xlValidateList, AlertStyle:=xlValidAlertStop, Operator:= _
@@ -74,6 +74,8 @@ Function CreateBillingServiceWorksheet(UserWorksheetName As String)
 
     ' Create border for the table
     BlackOutlineCells("D" & svcList_Length + 1)
+
+    CreateBillingServiceWorksheet = ws.Name
 End Function
 
 
