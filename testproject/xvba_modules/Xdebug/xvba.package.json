@@ -1,15 +1,15 @@
 {
-  "package": "Xlog",
+  "package": "Xdebug",
   "version": "1.0.0",
-  "author": "",
-  "email": "",
+  "author": "Alberto Edaurdo",
+  "email": "alberto.aeraphe@gmail.com",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aeraphe/xvba-cli.git"
+    "url": "https://github.com/Aeraphe/xdebug.git"
   },
   "description": "Creating amazing XVBA packages",
   "dependencies": {},
   "dev_dependencies": {},
-  "homepage": "https://github.com/Aeraphe/xvba-cli"
+  "homepage": "www.xvba.dev"
 }
